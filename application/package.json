@@ -2,9 +2,11 @@
   "name": "graph-insights",
   "version": "0.0.1",
   "description": "A personal knowledge database desktop application.",
+  "private": true,
   "main": "main.js",
   "scripts": {
-    "start":"electron .",
+    "build": "NODE_ENV=development webpack --config webpack.config.js",
+    "start": "NODE_ENV=development electron .",
     "test": "test"
   },
   "repository": {
@@ -24,6 +26,16 @@
   },
   "homepage": "https://github.com/sholloway/graph-insights#readme",
   "devDependencies": {
-    "electron": "5.0.6"
+    "@babel/core": "7.4.5",
+    "@babel/preset-env": "7.4.5",
+    "@babel/preset-react": "7.0.0",
+    "babel-loader": "8.0.6",
+    "electron": "5.0.6",
+    "webpack": "4.35.2",
+    "webpack-cli": "3.3.5"
+  },
+  "dependencies": {
+    "react": "16.8.6",
+    "react-dom": "16.8.6"
   }
 }

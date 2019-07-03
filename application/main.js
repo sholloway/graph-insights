@@ -10,8 +10,11 @@ function createWindow () {
 		}
 	});
 
+	//open the dev tools
+	win.webContents.openDevTools();
+
 	// and load the index.html of the app.
-	win.loadFile('index.html');
+	win.loadURL(`file://${__dirname}/public/index.html`);
 }
 
 app.on('ready', createWindow);
