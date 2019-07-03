@@ -1,0 +1,29 @@
+{
+  "name": "graph-insights",
+  "version": "0.0.1",
+  "description": "A personal knowledge database desktop application.",
+  "main": "main.js",
+  "scripts": {
+    "start":"electron .",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sholloway/graph-insights.git"
+  },
+  "keywords": [
+    "PKB",
+    "neo4j",
+    "electron",
+    "graph"
+  ],
+  "author": "Samuel D. Holloway",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sholloway/graph-insights/issues"
+  },
+  "homepage": "https://github.com/sholloway/graph-insights#readme",
+  "devDependencies": {
+    "electron": "5.0.6"
+  }
+}
