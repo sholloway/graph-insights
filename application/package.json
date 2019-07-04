@@ -7,7 +7,7 @@
 	"scripts": {
 		"build": "NODE_ENV=development webpack --config webpack.config.js",
 		"start": "NODE_ENV=development electron .",
-		"test": "test"
+		"test": "NODE_ENV=test NODE_PATH=. BABEL_DISABLE_CACHE=1 mocha --recursive -r @babel/register -r ignore-styles -r ./test/.setup.js test/**/*Test.js"
 	},
 	"repository": {
 		"type": "git",
@@ -29,9 +29,17 @@
 		"@babel/core": "7.4.5",
 		"@babel/preset-env": "7.4.5",
 		"@babel/preset-react": "7.0.0",
+		"@babel/register": "7.4.4",
 		"babel-loader": "8.0.6",
+		"babel-plugin-rewire": "1.2.0",
+		"chai": "4.2.0",
+		"core-js": "3.1.4",
 		"electron": "5.0.6",
 		"electron-rebuild": "1.8.5",
+		"ignore-styles": "5.0.1",
+		"jsdom": "15.1.1",
+		"mocha": "6.1.4",
+		"sinon": "7.3.2",
 		"webpack": "4.35.2",
 		"webpack-cli": "3.3.5"
 	},

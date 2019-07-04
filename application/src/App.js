@@ -1,8 +1,7 @@
 import React, { Component, createElement } from 'react';
 import ReactDOM from 'react-dom';
-
-//var neo4j = require('neo4j-driver').v1
 import { v1 as neo4j } from 'neo4j-driver';
+import SchemaCreator from './engine/graph/internal/SchemaCreator';
 
 function talkToDatabase(){
 	return new Promise((resolve, reject) => {
@@ -11,6 +10,9 @@ function talkToDatabase(){
 			neo4j.auth.basic('neo4j', 'admin')
 		);
 		let session = driver.session();
+		let sc = new SchemaCreator(session);
+		sc.createPropertyGraphDataModel();
+
 		session.run('CALL dbms.procedures()')
 			.then(result => {
 				session.close();
