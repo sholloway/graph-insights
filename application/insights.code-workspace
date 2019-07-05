@@ -1,0 +1,10 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"mocha.requires":["@babel/register", "ignore-styles", "./test/.setup.js"]
+	}
+}

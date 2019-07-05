@@ -10,8 +10,8 @@ function talkToDatabase(){
 			neo4j.auth.basic('neo4j', 'admin')
 		);
 		let session = driver.session();
-		let sc = new SchemaCreator(session);
-		sc.createPropertyGraphDataModel();
+		// let sc = new SchemaCreator(session);
+		// sc.createPropertyGraphDataModel();
 
 		session.run('CALL dbms.procedures()')
 			.then(result => {
@@ -20,7 +20,6 @@ function talkToDatabase(){
 				resolve(result);
 			}).catch(function(error) {
 				console.log(error);
-				session.run('CALL dbms.procedures()')
 				reject(error);
 			});
 	});
