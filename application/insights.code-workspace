@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "/Users/samuel.holloway/Documents/Code/machine/graph-engine"
 		}
 	],
 	"settings": {

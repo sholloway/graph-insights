@@ -11,10 +11,17 @@ const constraints = [
 	"CREATE CONSTRAINT ON (e:element) ASSERT e.mid IS UNIQUE"
 ];
 
+export const CREATE_SYSTEM_SPACE_STMT = 
+`create (ss:internal_system_space{
+  | mid:{mid},
+  | name:{name},
+  | creation_time:timestamp(),
+  | last_modified_time:timestamp()
+  |})`;
+
 function runCommand(session, cmd){
 	return new Promise((resolve, reject) => {
 		session.run(cmd).then(result => { 
-			console.log(`Ran: ${cmd}`);
 			resolve();
 		})
 		.catch(function(error) { 
@@ -37,23 +44,18 @@ function createConstraints(session){
 	});
 }
 
-function createIndices(){
+function createIndices(session){
 	return new Promise((resolve, reject) => {
-		console.log('createIndices');
 		resolve();
 	});
 } 
 
-function setupSystemSpace(){
-	return new Promise((resolve, reject) => {
-		console.log('setupSystemSpace');
-		resolve();
-	});
+function setupSystemSpace(session){
+	return runCommand(session, CREATE_SYSTEM_SPACE_STMT);
 }
 
 function defineSystemElementDefinitions(){
 	return new Promise((resolve, reject) => {
-		console.log('defineSystemElementDefinitions');
 		resolve();
 	});
 } 
@@ -64,19 +66,17 @@ function handleFailure(error){
 	return error;
 } 
 
-class SchemaCreator{
+export class SchemaCreator{
 	constructor(session){
 		this.session = session;
 	}
 
 	createPropertyGraphDataModel(){
 		return createConstraints(this.session)
-			.then(() => createIndices(this.session))
+//			.then(() => createIndices(this.session)) All indexes are currently created by constraints.
 			.then(() => setupSystemSpace(this.session))
 			.then(() => defineSystemElementDefinitions(this.session))
 			.then(() => { return 'database provisioned' })
 			.catch(error => handleFailure(error));
 	}
 }
-
-export default SchemaCreator;
