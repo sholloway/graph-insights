@@ -73,9 +73,9 @@ export class SchemaCreator{
 
 	createPropertyGraphDataModel(){
 		return createConstraints(this.session)
-//			.then(() => createIndices(this.session)) All indexes are currently created by constraints.
+			.then(() => createIndices(this.session)) // Placehlder: All indexes are currently created by constraints.
 			.then(() => setupSystemSpace(this.session))
-			.then(() => defineSystemElementDefinitions(this.session))
+			.then(() => defineSystemElementDefinitions(this.session)) //Placeholder
 			.then(() => { return 'database provisioned' })
 			.catch(error => handleFailure(error));
 	}
