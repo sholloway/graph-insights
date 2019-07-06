@@ -1,5 +1,29 @@
-import React, { Component, createElement } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import { Provider } from 'react-redux'
+import { RouterProvider } from 'react-router5'
+import ReactDOM from 'react-dom'
+import AppContainer from './components/AppContainer'
+import createRouter from './bootstrap/create-router'
+import configureStore from './bootstrap/create-store'
+import createRootReducer from './reducers';
+
+let initialState = {};
+const router = createRouter()
+const rootReducer = createRootReducer();
+const store = configureStore(router,rootReducer, initialState);
+const wrappedApp = (
+	<Provider store={store}>
+		<RouterProvider router={router}>
+			<AppContainer />
+		</RouterProvider>
+	</Provider>
+)
+
+router.start((err, state) => {
+	ReactDOM.render(wrappedApp, document.getElementById('root'))
+})
+
+/* 
 import { v1 as neo4j } from 'neo4j-driver';
 import SchemaCreator from './engine/graph/internal/SchemaCreator';
 
@@ -48,3 +72,4 @@ talkToDatabase()
 		console.log('Top level promise catch');
 		console.log(error);
 	});
+	*/
