@@ -8,7 +8,8 @@ const constraints = [
 	"CREATE CONSTRAINT ON (ed:element_definition) ASSERT ed.mid IS UNIQUE",
 	"CREATE CONSTRAINT ON (ed:element_definition) ASSERT ed.name IS UNIQUE",
 	"CREATE CONSTRAINT ON (pd:property_definition) ASSERT pd.mid IS UNIQUE",
-	"CREATE CONSTRAINT ON (e:element) ASSERT e.mid IS UNIQUE"
+	"CREATE CONSTRAINT ON (e:element) ASSERT e.mid IS UNIQUE",
+	"CREATE CONSTRAINT ON (bac:basic_auth_credential) ASSERT e.mid IS UNIQUE"
 ];
 
 export const CREATE_SYSTEM_SPACE_STMT = 

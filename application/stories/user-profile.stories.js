@@ -1,20 +1,7 @@
-import React, { Component} from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-class UserProfileForm extends Component{
-	constructor(props){
-		super(props);
-		this.state = {};
-	}
-
-	render(){
-		return (
-			<div>
-				<p>The User Profile Form</p>
-			</div>
-		);
-	}
-}
+import UserProfileForm from './../src/components/user/profile/UserProfileForm';
 
 storiesOf('User Profile', module)
 	.add('First Story', () => (

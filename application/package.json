@@ -36,6 +36,7 @@
 		"babel-plugin-rewire": "1.2.0",
 		"chai": "4.2.0",
 		"core-js": "3.1.4",
+		"css-loader": "3.0.0",
 		"electron": "5.0.6",
 		"electron-rebuild": "1.8.5",
 		"ignore-styles": "5.0.1",
@@ -43,6 +44,7 @@
 		"mocha": "6.1.4",
 		"react-scripts": "3.0.1",
 		"sinon": "7.3.2",
+		"style-loader": "0.23.1",
 		"webpack": "4.35.2",
 		"webpack-cli": "3.3.5"
 	},

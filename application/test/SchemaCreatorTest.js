@@ -20,16 +20,16 @@ describe('SchemaCreator', function(){
 		
 		it ('should have ran all steps', () => {
 			expect(result).to.equal('database provisioned');
-			expect(spy.callCount).to.equal(11); //All run calls.
+			expect(spy.callCount).to.equal(12); //All run calls.
 		});
 		
 		it ('should create constraints', async () =>{
-			let constraints = spy.args.slice(0,10); //Should be 10 constraints.
+			let constraints = spy.args.slice(0,11); //Should be 11 constraints.
 			constraints.forEach( c => { expect(c[0].startsWith('CREATE CONSTRAINT ON')).to.be.true; });
 		});
 		
 		it ('should setup the system space', () => {
-			let systemSpaceStmt = spy.args[10];
+			let systemSpaceStmt = spy.args[11];
 			expect(systemSpaceStmt[0]).to.equal(CREATE_SYSTEM_SPACE_STMT)	
 		});
 
