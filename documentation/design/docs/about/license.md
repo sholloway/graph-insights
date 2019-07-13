@@ -1,3 +1,8 @@
+# Licensing
+This this project and all assets (like this book) are licensed 
+via the MIT license which can be seen below.
+
+## MIT License
 MIT License
 
 Copyright (c) 2019 Samuel D. Holloway

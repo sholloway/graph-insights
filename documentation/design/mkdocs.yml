@@ -1,0 +1,17 @@
+site_name: Insights Application Architecture
+theme: readthedocs
+
+#Force the build to stop on misconfiguration.
+strict: true
+
+nav:
+- Home: 'index.md'
+- About:
+  - 'License': './about/license.md'
+- Design Overview:
+  - 'FAQ': 'design/application_overview.md'
+  - 'Design Goals': 'design/goals.md'
+  - 'Roadmap': 'design/mvp.md'
+  - 'System Context': 'design/system_context.md'
+  - 'Technology Stack': 'design/technology_stack.md'
+  - 'High Level Architecture': 'design/high_level_architecture.md'
