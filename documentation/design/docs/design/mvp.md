@@ -16,7 +16,7 @@ The application is currently in its initial development phase. The goal is to es
 	- [ ] Storybook.js Tests
 - Neo4J Integration
 	- [X] Schema Builder
-	- [ ] Credentials Storage with Keytar
+	- [X] Credentials Storage with Keytar
 	- [ ] Neo4J Utilities
 - [X] Design Initial Data Model
 - [ ] Application Logging
