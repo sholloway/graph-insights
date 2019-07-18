@@ -8,6 +8,7 @@ This code base is part of my series of experiments on building a desktop
 that leverages an embedded graph database. 
 
 Status: Under active development working towards version 0.1.0. Not stable. Do not use.
+See the [design document](https://samuelholloway.com/graph-insights/) for details around the purpose, roadmap and design of this project.
 
 ## Repo Structure
 This repository is subdivided into two build-able assets.
