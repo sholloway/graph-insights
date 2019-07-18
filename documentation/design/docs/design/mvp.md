@@ -12,10 +12,11 @@ The application is currently in its initial development phase. The goal is to es
 	- [X] Neo4J Integration via Bolt Driver
 	- [X] Electron/React/Redux/Router5/CSS Modules
 	- [X] Webpack Build
+	- [ ] JSDoc
 	- [ ] Storybook.js Tests
 - Neo4J Integration
 	- [X] Schema Builder
-	- [ ] Credentials Storage with Keyczar
+	- [ ] Credentials Storage with Keytar
 	- [ ] Neo4J Utilities
 - [X] Design Initial Data Model
 - [ ] Application Logging

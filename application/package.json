@@ -49,6 +49,7 @@
 		"webpack-cli": "3.3.5"
 	},
 	"dependencies": {
+		"keytar": "4.11.0",
 		"neo4j-driver": "1.7.5",
 		"react": "16.8.6",
 		"react-dom": "16.8.6",
