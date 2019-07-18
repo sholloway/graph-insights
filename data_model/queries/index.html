@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Useful Queries - Insights Application Architecture</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Useful Queries";
+    var mkdocs_page_input_path = "data_model/queries.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Insights Application Architecture</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">About</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../about/license/">License</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Design Overview</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../design/application_overview/">FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../design/goals/">Design Goals</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../design/mvp/">Roadmap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../design/system_context/">System Context</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../design/technology_stack/">Technology Stack</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../design/high_level_architecture/">Application Architecture</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">The Data Model</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../overview/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../data_spaces/">Data Spaces</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../elements_overview/">The Humble Element</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../edges_overview/">Edges</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dictionary/">Data Dictionary</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Useful Queries</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#queries">Queries</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#helper-queries">Helper Queries</a></li>
+        
+            <li><a class="toctree-l4" href="#working-with-elements">Working with Elements</a></li>
+        
+            <li><a class="toctree-l4" href="#application-queries">Application Queries</a></li>
+        
+            <li><a class="toctree-l4" href="#notes">Notes</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">The Schema DSL</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../dsl/overview/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../dsl/implementation/">Implementation</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../dsl/use/">Use</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Security</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../security/keystore/">Key Store</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../security/neo4j_credentials/">Neo4J Credentials</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Insights Application Architecture</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>The Data Model &raquo;</li>
+        
+      
+    
+    <li>Useful Queries</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="queries">Queries</h1>
+<p>The application has many database queries embedded in the Engine. To ease 
+onboarding and to aid designing enhancements the full list of queries the 
+application uses is provided.</p>
+<h2 id="helper-queries">Helper Queries</h2>
+<p>Helper queries are not used by the application but can aid development.</p>
+<h3 id="list-all-constraints-in-the-database">List all constraints in the database.</h3>
+<pre><code class="cypher">CALL db.constraints
+</code></pre>
+
+<h3 id="delete-all-nodes-only-do-on-a-database-you-dont-care-about">Delete all nodes. (Only do on a database you don't care about.)</h3>
+<pre><code class="cypher">match (n) detach delete n;
+</code></pre>
+
+<h3 id="create-a-couple-of-simple-associated-nodes">Create a couple of simple associated Nodes.</h3>
+<pre><code class="cypher">create 
+  (a:Person {name: 'Steve', mid:123}) - [:association {associationId: 1}] -&gt; (b:Person {name: 'Bob', mid:456}) 
+  - [:association {associationId: 2}] -&gt; (c:Person {name: 'Alice', mid:789});
+
+match (b:Person {mid:456})
+create (d:DataSet)-[:contains]-&gt;(b);
+</code></pre>
+
+<pre><code>match (x)-[a:association]-&gt;(y {mid: 456})
+delete a;
+
+match (x)-[a]-&gt;(y {mid: 456}) 
+where type(a) &lt;&gt; &quot;contains&quot;
+delete a;
+</code></pre>
+
+<h2 id="working-with-elements">Working with Elements</h2>
+<h3 id="removing-associations-between-elements">Removing associations between Elements.</h3>
+<p>Removing an association is as simple as deleting the edge. However, care must 
+be taken to not remove the element from the data set. An edge with the label
+<em>contains</em> is what registers the element with the data set. To remove all 
+inbound associations the following query can be used.</p>
+<pre><code class="cypher">match (x)-[a]-&gt;(y {mid: {elementId}}) 
+where type(a) &lt;&gt; &quot;contains&quot;
+delete a; 
+</code></pre>
+
+<h2 id="application-queries">Application Queries</h2>
+<p>TBD</p>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>Document how to get the <a href="https://neo4j.com/docs/operations-manual/current/tools/cypher-shell/">Cypher Shell</a> working.</li>
+<li>Document profile=ing queries using the Cypher profile command. As each query is documented, profile it.
+  <a href="https://graphaware.com/neo4j/2015/01/16/neo4j-graph-model-design-labels-versus-indexed-properties.html">Example</a></li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../dsl/overview/" class="btn btn-neutral float-right" title="Overview">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../dictionary/" class="btn btn-neutral" title="Data Dictionary"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../dictionary/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../dsl/overview/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

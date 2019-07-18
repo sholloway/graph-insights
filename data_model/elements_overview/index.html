@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>The Humble Element - Insights Application Architecture</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "The Humble Element";
+    var mkdocs_page_input_path = "data_model/elements_overview.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Insights Application Architecture</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">About</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../about/license/">License</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Design Overview</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../design/application_overview/">FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../design/goals/">Design Goals</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../design/mvp/">Roadmap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../design/system_context/">System Context</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../design/technology_stack/">Technology Stack</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../design/high_level_architecture/">Application Architecture</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">The Data Model</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../overview/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../data_spaces/">Data Spaces</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">The Humble Element</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#the-humble-element">The Humble Element</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#the-element-definition-node">The Element Definition Node</a></li>
+        
+            <li><a class="toctree-l4" href="#the-property-definition-node">The Property Definition Node</a></li>
+        
+            <li><a class="toctree-l4" href="#the-element-node">The Element Node</a></li>
+        
+            <li><a class="toctree-l4" href="#element-organization">Element Organization</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../edges_overview/">Edges</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dictionary/">Data Dictionary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../queries/">Useful Queries</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">The Schema DSL</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../dsl/overview/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../dsl/implementation/">Implementation</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../dsl/use/">Use</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Security</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../security/keystore/">Key Store</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../security/neo4j_credentials/">Neo4J Credentials</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Insights Application Architecture</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>The Data Model &raquo;</li>
+        
+      
+    
+    <li>The Humble Element</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="the-humble-element">The Humble Element</h1>
+<p>The application data model is simplistic by design. Rather than having hundreds of
+predefined tables to capture the user's data a meta model is employed to empower
+users to define how they want their data stored. This is accomplished through
+the use of 3 node types: Element Definitions, Property Definitions and Elements.</p>
+<h2 id="the-element-definition-node">The Element Definition Node</h2>
+<p>An Element Definition is the heart of the Insights data model. It is what makes 
+the dynamic data model possible. Users create new element definitions to define
+what their data looks like. When they later capture data they do so by provisioning 
+instances of their element definitions in the form of <strong>elements</strong>.</p>
+<p>For software developers, the analogy of classes and objects is appropriate. In 
+object orientated software classes are defined and then instances of the classes 
+are created called objects. The same is true with Element Definitions. </p>
+<p>Element Definitions are simple. They are composed of a name, a description and a 
+collection of <strong>property definitions</strong>. </p>
+<h2 id="the-property-definition-node">The Property Definition Node</h2>
+<p>Property Definitions define what data fields are available on an element. Each 
+Property Definition has a name and type.</p>
+<h3 id="property-definition-types">Property Definition Types</h3>
+<p>The <em>type</em> value specified for a property definition has two effects. First, it specifies what the storage format is for the field on any instantiated elements and second, it drives what input control is displayed in the user interface on the Element form. There are two categories of property definition types: primitives and ADTs.</p>
+<h4 id="primitive-types">Primitive Types</h4>
+<p>Primitive types are the data types supported by Neo4J.  </p>
+<ul>
+<li>Integer</li>
+<li>Float</li>
+<li>String</li>
+<li>Boolean</li>
+<li>Spatial Point</li>
+<li>Date</li>
+<li>Time</li>
+<li>LocalTime</li>
+<li>DateTime</li>
+<li>LocalDateTime</li>
+<li>Duration</li>
+</ul>
+<h4 id="abstract-data-types-adt">Abstract Data Types (ADT)</h4>
+<p>Abstract data types are combinations of primitives to enable common complex fields.</p>
+<ul>
+<li>Address</li>
+<li>Phone Number</li>
+<li>Email Address</li>
+<li>Markdown</li>
+</ul>
+<h2 id="the-element-node">The Element Node</h2>
+<p>Elements are where the action is. They contain the actual user data. They are 
+the vertices in the graph connected by edges. Even though the graph leverages 
+a meta model, Elements are strongly typed. When a user provisions a new Element 
+of a specific Element Definition type the application provisions a Neo4J node 
+with a label that matches the Element Definition name. The fields on the new 
+node are created according to the associated property definitions. </p>
+<p>Currently the Element Definition enforcement is only done at Element provisioning 
+time. If a user changes an Element Definition after some Elements where provisioned, 
+nothing happens to the existing Elements.</p>
+<h2 id="element-organization">Element Organization</h2>
+<h3 id="element-tagging">Element Tagging</h3>
+<p>A goal of the system is to allow the users to work with their data the way they
+want to. As part of that, users should be allowed to categorize and group Elements
+as they see fit. This is accomplished through the use of tags. </p>
+<h4 id="tag-rules">Tag Rules</h4>
+<p>Tags are defined by the user in the context of a data set. They must be unique
+in the scope of their containing data set. Tags may only contain alphanumeric 
+characters (including spaces). Prefixed and trailing white space are removed.
+Spaces between words are replaced with underscores.</p>
+<h4 id="tag-implementation">Tag Implementation</h4>
+<p>When a tag is defined a <strong>Tag Definition</strong> node is created and associated with 
+the active Data Set node. When a tag is applied to an Element, it is added as 
+a Neo4J <a href="https://neo4j.com/docs/developer-manual/current/introduction/graphdb-concepts/">label</a>.
+Multiple tags may be applied to an element. Tags may also be removed. If a 
+Tag Definition is deleted, the associated tag is also removed from all Elements.
+The Elements, however, are not deleted. </p>
+<h3 id="the-element-life-cycle">The Element Life Cycle</h3>
+<p><img alt="The Element Life Cycle" src="../../images/data_model/element_lifecycle.png" /></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../edges_overview/" class="btn btn-neutral float-right" title="Edges">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../data_spaces/" class="btn btn-neutral" title="Data Spaces"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../data_spaces/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../edges_overview/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

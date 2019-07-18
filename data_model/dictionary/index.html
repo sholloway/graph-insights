@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Data Dictionary - Insights Application Architecture</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Data Dictionary";
+    var mkdocs_page_input_path = "data_model/dictionary.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Insights Application Architecture</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">About</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../about/license/">License</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Design Overview</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../design/application_overview/">FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../design/goals/">Design Goals</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../design/mvp/">Roadmap</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../design/system_context/">System Context</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../design/technology_stack/">Technology Stack</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../design/high_level_architecture/">Application Architecture</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">The Data Model</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../overview/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../data_spaces/">Data Spaces</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../elements_overview/">The Humble Element</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../edges_overview/">Edges</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Data Dictionary</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#the-data-model">The Data Model</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#node-definitions">Node Definitions</a></li>
+        
+            <li><a class="toctree-l4" href="#database-constraints-index-creation">Database Constraints &amp; Index Creation</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../queries/">Useful Queries</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">The Schema DSL</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../dsl/overview/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../dsl/implementation/">Implementation</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../dsl/use/">Use</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Security</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../security/keystore/">Key Store</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../security/neo4j_credentials/">Neo4J Credentials</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Insights Application Architecture</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>The Data Model &raquo;</li>
+        
+      
+    
+    <li>Data Dictionary</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="the-data-model">The Data Model</h1>
+<p>The application data model can be seen in the below ERD diagram. 
+A full Explanation of all entities is provided in the Node Definitions
+section. </p>
+<p><img alt="erd" src="../../images/data_model/erd.png" /></p>
+<h2 id="node-definitions">Node Definitions</h2>
+<h3 id="systemspace">SystemSpace</h3>
+<p>The collection of ElementDefinitions that are available to the user 
+to instantiate, but can not be redefined. There is currently only 
+one instance of a SystemSpace node in a local graph.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Example</th>
+<th>Constraints</th>
+<th>Indexed</th>
+<th>Deprecated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mid</td>
+<td>The unique ID of the graph node.</td>
+<td>IV UUID</td>
+<td>329c4c3f-4213-4c82-90fb-05bac8943596</td>
+<td>Unique</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>A label for the system space.</td>
+<td>String</td>
+<td>System Space</td>
+<td>Unique</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>creation_time</td>
+<td>When the node is created.</td>
+<td>Timestamp</td>
+<td>1535023012361</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>last_modified_time</td>
+<td>When the node was last modified.</td>
+<td>Timestamp</td>
+<td>1535023012361</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="user">User</h3>
+<p>A person who interacts with the application.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Example</th>
+<th>Constraints</th>
+<th>Indexed</th>
+<th>Deprecated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mid</td>
+<td>The unique ID of the graph node.</td>
+<td>IV UUID</td>
+<td>329c4c3f-4213-4c82-90fb-05bac8943596</td>
+<td>Unique</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>first_name</td>
+<td>The user's given name.</td>
+<td>String</td>
+<td>John</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>last_name</td>
+<td>The user's family name.</td>
+<td>String</td>
+<td>Smith</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>user_name</td>
+<td>The user's prompted identifier. Used for authentication.</td>
+<td>String</td>
+<td>jsmith</td>
+<td>Unique</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>email_address</td>
+<td>The user's recovery email address.</td>
+<td>String</td>
+<td>jsmith@smith.com</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>creation_time</td>
+<td>When the node is created.</td>
+<td>Timestamp</td>
+<td>1535023012361</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>last_modified_time</td>
+<td>When the node was last modified.</td>
+<td>Timestamp</td>
+<td>1535023012361</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="elementdefinition">ElementDefinition</h3>
+<p>An abstract object that is responsible for the definition of nodes that can be 
+dynamically provisioned by the user.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Example</th>
+<th>Constraints</th>
+<th>Indexed</th>
+<th>Deprecated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mid</td>
+<td>The unique ID of the graph node.</td>
+<td>IV UUID</td>
+<td>329c4c3f-4213-4c82-90fb-05bac8943596</td>
+<td>Unique</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>The name of the Element Definition.</td>
+<td>String</td>
+<td>Note</td>
+<td>Unique</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>description</td>
+<td>Explanation of what the Element Definition is for.</td>
+<td>String</td>
+<td>Captures user thoughts.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>creation_time</td>
+<td>When the node is created.</td>
+<td>Timestamp</td>
+<td>1535023012361</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>last_modified_time</td>
+<td>When the node was last modified.</td>
+<td>Timestamp</td>
+<td>1535023012361</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="propertydefinition">PropertyDefinition</h3>
+<p>Defines a data field that can be associated with an ElementDefinition.
+Note: Need to flush out the valid types. (Engine Issue #48)</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Example</th>
+<th>Constraints</th>
+<th>Indexed</th>
+<th>Deprecated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mid</td>
+<td>The unique ID of the graph node.</td>
+<td>IV UUID</td>
+<td>329c4c3f-4213-4c82-90fb-05bac8943596</td>
+<td>Unique</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>The name of the field shall have.</td>
+<td>String</td>
+<td>Note</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>type</td>
+<td>The data type the field shall have.</td>
+<td>String</td>
+<td>Any</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>creation_time</td>
+<td>When the node is created.</td>
+<td>Timestamp</td>
+<td>1535023012361</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>last_modified_time</td>
+<td>When the node was last modified.</td>
+<td>Timestamp</td>
+<td>1535023012361</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="dataset">DataSet</h3>
+<p>A graph, defined by a user composed of ElementDefinitions and Elements and 
+their associations.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Example</th>
+<th>Constraints</th>
+<th>Indexed</th>
+<th>Deprecated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mid</td>
+<td>The unique ID of the graph node.</td>
+<td>IV UUID</td>
+<td>329c4c3f-4213-4c82-90fb-05bac8943596</td>
+<td>Unique</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>The name of the Data Set.</td>
+<td>String</td>
+<td>Product Enhancements</td>
+<td>Unique</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>description</td>
+<td>Explanation of what the Data Set is for.</td>
+<td>String</td>
+<td>My Product Thoughts</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>creation_time</td>
+<td>When the node is created.</td>
+<td>Timestamp</td>
+<td>1535023012361</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>last_modified_time</td>
+<td>When the node was last modified.</td>
+<td>Timestamp</td>
+<td>1535023012361</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="element">Element</h3>
+<p>A node in the graph. It is created from the template of an ElementDefinition. 
+The Element is created with two associated Labels:
+<em> The ElementDefinition name. 
+</em> The reserved word: element.</p>
+<p>Fields are node properties based on the ElementDefinition's associated PropertyDefinition. 
+Each associated PropertyDefinition results in a unique field added to the Element. 
+The field's name and type match what is specified on the PropertyDefinition.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Example</th>
+<th>Constraints</th>
+<th>Indexed</th>
+<th>Deprecated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mid</td>
+<td>The unique ID of the graph node.</td>
+<td>IV UUID</td>
+<td>329c4c3f-4213-4c82-90fb-05bac8943596</td>
+<td>Unique</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>fields</td>
+<td>See above note.</td>
+<td>Any</td>
+<td>n/a</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>creation_time</td>
+<td>When the node is created.</td>
+<td>Timestamp</td>
+<td>1535023012361</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>last_modified_time</td>
+<td>When the node was last modified.</td>
+<td>Timestamp</td>
+<td>1535023012361</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="tag-definition">Tag Definition</h3>
+<p>A user defined tag. A tag is metadata that can be assigned to an Element for 
+the purpose of classification. Elements may have 0 to many tags.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Example</th>
+<th>Constraints</th>
+<th>Indexed</th>
+<th>Deprecated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mid</td>
+<td>The unique ID of the graph node.</td>
+<td>IV UUID</td>
+<td>329c4c3f-4213-4c82-90fb-05bac8943596</td>
+<td>Unique</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>The name of the tag.</td>
+<td>String</td>
+<td>person, place, thing</td>
+<td>Unique</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>creation_time</td>
+<td>When the node is created.</td>
+<td>Timestamp</td>
+<td>1535023012361</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>last_modified_time</td>
+<td>When the node was last modified.</td>
+<td>Timestamp</td>
+<td>1535023012361</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="database-constraints-index-creation">Database Constraints &amp; Index Creation</h2>
+<p>All database constraints and indexes are created upon initializing a new database.
+This is performed by org.machine.engine.graph.internal.SchemaCreator. See the 
+code documentation for more details.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../queries/" class="btn btn-neutral float-right" title="Useful Queries">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../edges_overview/" class="btn btn-neutral" title="Edges"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../edges_overview/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../queries/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>
