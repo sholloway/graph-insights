@@ -1,10 +1,11 @@
 # Roadmap
-The application is currently in its initial development phase. The goal is to establish a usable application by version 0.1.0. The target capability roadmap is below.
+The application is currently in its initial development phase. The goal is to establish a usable application by version 0.1.0. The target capability roadmap is below. 
 
 ## Target Releases
 ### 0.0.1 - Wiring
-- [ ] Establish the Design Document
+- [X] Establish the Design Document
 - [ ] Publish Design Doc on GitHub Pages
+- [ ] Travis.ci Setup
 - Wiring
 	- [X] Mocha Unit Tests
 	- [X] Storybook.js for Component Design
@@ -27,6 +28,8 @@ The application is currently in its initial development phase. The goal is to es
 - [ ] Element Definition CRUD
 - [ ] Element CRUD
 - [ ] Element Association CRUD
+- [ ] Element Definition Grouping
+- [ ] Abstract Data Types for Property Definitions
 
 ### 0.0.3 - Application Bootstrap
 - [ ] User Neo4J Login

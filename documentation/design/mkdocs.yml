@@ -14,4 +14,18 @@ nav:
   - 'Roadmap': 'design/mvp.md'
   - 'System Context': 'design/system_context.md'
   - 'Technology Stack': 'design/technology_stack.md'
-  - 'High Level Architecture': 'design/high_level_architecture.md'
+  - 'Application Architecture': 'design/high_level_architecture.md'
+- The Data Model:
+  - 'Overview': 'data_model/overview.md'
+  - 'Data Spaces': 'data_model/data_spaces.md'
+  - 'The Humble Element': 'data_model/elements_overview.md'
+  - 'Edges': 'data_model/edges_overview.md'
+  - 'Data Dictionary': 'data_model/dictionary.md'
+  - 'Useful Queries': 'data_model/queries.md'
+- The Schema DSL:
+  - 'Overview': 'dsl/overview.md'
+  - 'Implementation': 'dsl/implementation.md'
+  - 'Use': 'dsl/use.md'
+- Security:
+  - 'Key Store': 'security/keystore.md'
+  - 'Neo4J Credentials': 'security/neo4j_credentials.md'
