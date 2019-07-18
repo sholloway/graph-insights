@@ -4,7 +4,7 @@ The application is currently in its initial development phase. The goal is to es
 ## Target Releases
 ### 0.0.1 - Wiring
 - [X] Establish the Design Document
-- [ ] Publish Design Doc on GitHub Pages
+- [X] Publish Design Doc on GitHub Pages
 - [ ] Travis.ci Setup
 - Wiring
 	- [X] Mocha Unit Tests
