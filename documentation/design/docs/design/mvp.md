@@ -19,12 +19,12 @@ The application is currently in its initial development phase. The goal is to es
 	- [X] Credentials Storage with Keytar
 	- [ ] Neo4J Utilities
 - [X] Design Initial Data Model
-- [ ] Application Logging
+- [X] Application Logging
 
 ### 0.0.2 - Schema DSL
 - [ ] Docker Build for Database Query Testing
 - [ ] System Space
-- [ ] User Profile 
+- [ ] User Profile/User Space 
 - [ ] Data Set CRUD
 - [ ] Element Definition CRUD
 - [ ] Element CRUD

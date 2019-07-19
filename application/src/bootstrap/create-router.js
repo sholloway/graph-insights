@@ -1,4 +1,5 @@
 import createRouter from 'router5'
+import loggerPlugin from 'router5/plugins/logger';
 import routes from './routes'
 
 export default function configureRouter() {
@@ -6,5 +7,8 @@ export default function configureRouter() {
 		defaultRoute: 'main'
 	};
 	const router = createRouter(routes, routerOptions);
+	if (process.env.NODE_ENV === `development`){
+		router.usePlugin(loggerPlugin);
+	}
 	return router
 }

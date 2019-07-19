@@ -29,3 +29,5 @@ nav:
 - Security:
   - 'Key Store': 'security/keystore.md'
   - 'Neo4J Credentials': 'security/neo4j_credentials.md'
+- Runtime: 
+  - 'Logging': 'runtime/logging.md'
