@@ -8,7 +8,8 @@
 		"build": "NODE_ENV=development webpack --config webpack.config.js",
 		"start": "NODE_ENV=development electron .",
 		"test": "NODE_ENV=test NODE_PATH=. BABEL_DISABLE_CACHE=1 mocha --recursive -r @babel/register -r ignore-styles -r ./test/.setup.js test/**/*Test.js",
-		"storybook:start": "start-storybook --config-dir .storybook"
+		"storybook:start": "start-storybook --config-dir .storybook",
+		"docs:code": "./node_modules/.bin/jsdoc -r -p ./package.json -d jsdocs src/ -R ./README.md"
 	},
 	"repository": {
 		"type": "git",
@@ -40,6 +41,7 @@
 		"electron": "5.0.6",
 		"electron-rebuild": "1.8.5",
 		"ignore-styles": "5.0.1",
+		"jsdoc": "3.6.3",
 		"jsdom": "15.1.1",
 		"mocha": "6.1.4",
 		"react-scripts": "3.0.1",

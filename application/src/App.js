@@ -1,3 +1,7 @@
+/**
+ * The entry point of the application.
+ * @module app
+ */
 import React from 'react'
 import { Provider } from 'react-redux'
 import { RouterProvider } from 'react-router5'
@@ -7,6 +11,7 @@ import createRouter from './bootstrap/create-router'
 import configureStore from './bootstrap/create-store'
 import createRootReducer from './reducers';
 
+//TODO: Give this a proper structure. Either a series of functions, or a class to organize.
 let initialState = {};
 const router = createRouter()
 const rootReducer = createRootReducer();
