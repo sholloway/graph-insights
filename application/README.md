@@ -1,18 +1,59 @@
 # Graph Insights PKB Application
 - - -
-TBD 
+This is the code for the desktop application _Insights_. It is built using Electron, React, Redux, and Neo4J.
+For information on the architecture and general design see the [design doc](https://samuelholloway.com/graph-insights/).
 
-## Getting Started
-TBD
+## Getting Started with Development
+### Prerequisites 
+I develop on a Mac, so all instructions are for that platform. I use Homebrew for managing installs and NVM for working with Node.js.
+1. Install [Homebrew](https://brew.sh/).
+2. Install [NVM](https://github.com/nvm-sh/nvm) with brew.
+```shell
+brew install nvm
+```
+3. With NVM, install Node.js 12.0.0 (same version as Electron) and switch to that.
+```shell
+nvm install 12.0.0
+nvm user 12.0.0
+```
 
-### Dependencies
-TBD
+### Work with the Code Base
+1. Get the code.
+```shell
+git clone https://github.com/sholloway/graph-insights.git
+```
+2. Switch to the active development branch (e.g. v0.0.1)
+```shell 
+git checkout v0.0.1
+```
+3. Install the projects NPM dependencies.
+```shell
+cd ./application
+npm install
+```
+4. Run the mocked (no Neo4J integration) unit tests.
+```shell
+npm test
+```
 
-### Development
-TBD
+### Run the App in Development Mode
+1. Build the app via Webpack.
+```shell
+npm run build
+```
+2. Start the app.
+```shell
+npm start
+```
 
 ### NPM Tasks
-TBD
+| Task            | Description                                                                | Run Command             | 
+|-----------------|----------------------------------------------------------------------------|-------------------------|
+| build           | Builds the application that enables it to run as an Electron App.          | npm run build           | 
+| start           | Starts the app.                                                            | npm start               | 
+| test            | Runs the mocked unit tests.                                                | npm test                |
+| storybook:start | Starts the Storybook.js application for doing React component development. | npm run storybook:start |
+| docs:code       | Generates the code documentation via JSDocs.                               | npm run docs:code       |
 
 ## Related Resources
 ### Electron
@@ -21,9 +62,6 @@ TBD
 ### React
 * [Facebook's Create React App](https://github.com/facebookincubator/create-react-app)
 * [React.js](https://facebook.github.io/react/index.html)
-* [Flux Diagram](https://github.com/facebook/flux)
-* [Flux Architecture](https://facebook.github.io/flux/docs/overview.html)
-* [Cartoon Guide for Flux](https://medium.com/code-cartoons/a-cartoon-guide-to-flux-6157355ab207)
 * [Thinking in React](http://facebook.github.io/react/docs/thinking-in-react.html)
 * [Top Level API (Global)](https://facebook.github.io/react/docs/top-level-api.html)
 * [Component API (Class)](https://facebook.github.io/react/docs/component-api.html)
