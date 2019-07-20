@@ -1,3 +1,7 @@
+# Ignore Dependencies
 node_modules
+
+# Ignore Generated Assets
 application/public/graph-insights/
 documentation/design/site/
+application/jsdocs/
