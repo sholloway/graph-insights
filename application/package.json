@@ -40,7 +40,7 @@
 		"electron": "5.0.6",
 		"electron-rebuild": "1.8.5",
 		"ignore-styles": "5.0.1",
-		"jsdom": "15.1.1",
+		"jsdom": "16.5.0",
 		"mocha": "6.1.4",
 		"react-scripts": "3.0.1",
 		"sinon": "7.3.2",
