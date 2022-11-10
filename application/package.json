@@ -37,7 +37,7 @@
 		"chai": "4.2.0",
 		"core-js": "3.1.4",
 		"css-loader": "3.0.0",
-		"electron": "5.0.6",
+		"electron": "18.3.7",
 		"electron-rebuild": "1.8.5",
 		"ignore-styles": "5.0.1",
 		"jsdom": "15.1.1",
